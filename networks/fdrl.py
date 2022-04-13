@@ -112,7 +112,7 @@ class FDRL(nn.Module):
         
         self.backbone = models.resnet18()
         self.backbone.load_state_dict(
-            torch.load('models/resnet18_msceleb.pth', map_location='cpu')['state_dict'], strict=True)
+            torch.load('backbone/resnet18_msceleb.pth', map_location='cpu')['state_dict'], strict=True)
         self.backbone = nn.Sequential(*list(self.backbone.children())[:-2])
         self.pooling = nn.AvgPool2d(7, stride=1)
         self.fdn = FDN(self.M, self.P, self.D)
