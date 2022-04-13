@@ -12,7 +12,7 @@ from networks.fdrl import FDRL
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('--raf_path', type=str, default='../DAN/datasets/raf-basic/', help='Raf-DB dataset path.')
-    parser.add_argument('--batch_size', type=int, default=32, help='Batch size.')
+    parser.add_argument('--batch_size', type=int, default=64, help='Batch size.')
     parser.add_argument('--workers', default=4, type=int, help='Number of data loading workers.')
     parser.add_argument('--num_class', type=int, default=7, help='Number of class.')
     parser.add_argument('--num_branch', type=int, default=9, help='Number of branches.')

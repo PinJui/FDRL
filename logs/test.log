@@ -1,0 +1,120 @@
+2022-04-13 18:20 INFO [Epoch 1] Training accuracy: 0.5678. Loss: 28.756. LR 0.001000
+2022-04-13 18:20 INFO [Epoch 1] Validation accuracy:0.7624. Loss:1.426
+2022-04-13 18:20 INFO Best_acc:0.7624
+2022-04-13 18:20 INFO [Epoch 2] Training accuracy: 0.7496. Loss: 1.284. LR 0.001000
+2022-04-13 18:20 INFO [Epoch 2] Validation accuracy:0.8220. Loss:1.012
+2022-04-13 18:20 INFO Best_acc:0.822
+2022-04-13 18:21 INFO [Epoch 3] Training accuracy: 0.7994. Loss: 1.018. LR 0.001000
+2022-04-13 18:21 INFO [Epoch 3] Validation accuracy:0.8400. Loss:0.895
+2022-04-13 18:21 INFO Best_acc:0.84
+2022-04-13 18:21 INFO [Epoch 4] Training accuracy: 0.8228. Loss: 0.889. LR 0.001000
+2022-04-13 18:21 INFO [Epoch 4] Validation accuracy:0.8263. Loss:0.869
+2022-04-13 18:21 INFO Best_acc:0.84
+2022-04-13 18:21 INFO [Epoch 5] Training accuracy: 0.8409. Loss: 0.791. LR 0.001000
+2022-04-13 18:21 INFO [Epoch 5] Validation accuracy:0.8475. Loss:0.811
+2022-04-13 18:21 INFO Best_acc:0.8475
+2022-04-13 18:22 INFO [Epoch 6] Training accuracy: 0.8518. Loss: 0.724. LR 0.001000
+2022-04-13 18:22 INFO [Epoch 6] Validation accuracy:0.8426. Loss:0.770
+2022-04-13 18:22 INFO Best_acc:0.8475
+2022-04-13 18:22 INFO [Epoch 7] Training accuracy: 0.8642. Loss: 0.665. LR 0.001000
+2022-04-13 18:22 INFO [Epoch 7] Validation accuracy:0.8559. Loss:0.697
+2022-04-13 18:22 INFO Best_acc:0.8559
+2022-04-13 18:22 INFO [Epoch 8] Training accuracy: 0.8685. Loss: 0.633. LR 0.001000
+2022-04-13 18:22 INFO [Epoch 8] Validation accuracy:0.8582. Loss:0.682
+2022-04-13 18:22 INFO Best_acc:0.8582
+2022-04-13 18:23 INFO [Epoch 9] Training accuracy: 0.8839. Loss: 0.574. LR 0.001000
+2022-04-13 18:23 INFO [Epoch 9] Validation accuracy:0.8289. Loss:0.776
+2022-04-13 18:23 INFO Best_acc:0.8582
+2022-04-13 18:23 INFO [Epoch 10] Training accuracy: 0.8831. Loss: 0.552. LR 0.001000
+2022-04-13 18:23 INFO [Epoch 10] Validation accuracy:0.8198. Loss:0.767
+2022-04-13 18:23 INFO Best_acc:0.8582
+2022-04-13 18:24 INFO [Epoch 11] Training accuracy: 0.9168. Loss: 0.445. LR 0.000100
+2022-04-13 18:24 INFO [Epoch 11] Validation accuracy:0.8827. Loss:0.596
+2022-04-13 18:24 INFO Best_acc:0.8827
+2022-04-13 18:24 INFO [Epoch 12] Training accuracy: 0.9390. Loss: 0.386. LR 0.000100
+2022-04-13 18:24 INFO [Epoch 12] Validation accuracy:0.8807. Loss:0.597
+2022-04-13 18:24 INFO Best_acc:0.8827
+2022-04-13 18:24 INFO [Epoch 13] Training accuracy: 0.9416. Loss: 0.380. LR 0.000100
+2022-04-13 18:24 INFO [Epoch 13] Validation accuracy:0.8859. Loss:0.589
+2022-04-13 18:24 INFO Best_acc:0.8859
+2022-04-13 18:25 INFO [Epoch 14] Training accuracy: 0.9489. Loss: 0.351. LR 0.000100
+2022-04-13 18:25 INFO [Epoch 14] Validation accuracy:0.8895. Loss:0.578
+2022-04-13 18:25 INFO Best_acc:0.8895
+2022-04-13 18:25 INFO [Epoch 15] Training accuracy: 0.9511. Loss: 0.341. LR 0.000100
+2022-04-13 18:25 INFO [Epoch 15] Validation accuracy:0.8836. Loss:0.582
+2022-04-13 18:25 INFO Best_acc:0.8895
+2022-04-13 18:25 INFO [Epoch 16] Training accuracy: 0.9540. Loss: 0.332. LR 0.000100
+2022-04-13 18:25 INFO [Epoch 16] Validation accuracy:0.8866. Loss:0.582
+2022-04-13 18:25 INFO Best_acc:0.8895
+2022-04-13 18:26 INFO [Epoch 17] Training accuracy: 0.9541. Loss: 0.331. LR 0.000100
+2022-04-13 18:26 INFO [Epoch 17] Validation accuracy:0.8810. Loss:0.584
+2022-04-13 18:26 INFO Best_acc:0.8895
+2022-04-13 18:26 INFO [Epoch 18] Training accuracy: 0.9576. Loss: 0.313. LR 0.000100
+2022-04-13 18:26 INFO [Epoch 18] Validation accuracy:0.8833. Loss:0.585
+2022-04-13 18:26 INFO Best_acc:0.8895
+2022-04-13 18:26 INFO [Epoch 19] Training accuracy: 0.9637. Loss: 0.300. LR 0.000010
+2022-04-13 18:26 INFO [Epoch 19] Validation accuracy:0.8846. Loss:0.579
+2022-04-13 18:26 INFO Best_acc:0.8895
+2022-04-13 18:27 INFO [Epoch 20] Training accuracy: 0.9619. Loss: 0.300. LR 0.000010
+2022-04-13 18:27 INFO [Epoch 20] Validation accuracy:0.8898. Loss:0.574
+2022-04-13 18:27 INFO Best_acc:0.8898
+2022-04-13 18:27 INFO [Epoch 21] Training accuracy: 0.9639. Loss: 0.296. LR 0.000010
+2022-04-13 18:27 INFO [Epoch 21] Validation accuracy:0.8875. Loss:0.580
+2022-04-13 18:27 INFO Best_acc:0.8898
+2022-04-13 18:27 INFO [Epoch 22] Training accuracy: 0.9667. Loss: 0.287. LR 0.000010
+2022-04-13 18:27 INFO [Epoch 22] Validation accuracy:0.8918. Loss:0.575
+2022-04-13 18:27 INFO Best_acc:0.8918
+2022-04-13 18:28 INFO [Epoch 23] Training accuracy: 0.9646. Loss: 0.292. LR 0.000010
+2022-04-13 18:28 INFO [Epoch 23] Validation accuracy:0.8915. Loss:0.573
+2022-04-13 18:28 INFO Best_acc:0.8918
+2022-04-13 18:28 INFO [Epoch 24] Training accuracy: 0.9680. Loss: 0.287. LR 0.000010
+2022-04-13 18:28 INFO [Epoch 24] Validation accuracy:0.8898. Loss:0.576
+2022-04-13 18:28 INFO Best_acc:0.8918
+2022-04-13 18:28 INFO [Epoch 25] Training accuracy: 0.9676. Loss: 0.286. LR 0.000010
+2022-04-13 18:29 INFO [Epoch 25] Validation accuracy:0.8902. Loss:0.570
+2022-04-13 18:29 INFO Best_acc:0.8918
+2022-04-13 18:29 INFO [Epoch 26] Training accuracy: 0.9648. Loss: 0.288. LR 0.000001
+2022-04-13 18:29 INFO [Epoch 26] Validation accuracy:0.8902. Loss:0.571
+2022-04-13 18:29 INFO Best_acc:0.8918
+2022-04-13 18:29 INFO [Epoch 27] Training accuracy: 0.9649. Loss: 0.291. LR 0.000001
+2022-04-13 18:29 INFO [Epoch 27] Validation accuracy:0.8898. Loss:0.572
+2022-04-13 18:29 INFO Best_acc:0.8918
+2022-04-13 18:30 INFO [Epoch 28] Training accuracy: 0.9674. Loss: 0.286. LR 0.000001
+2022-04-13 18:30 INFO [Epoch 28] Validation accuracy:0.8911. Loss:0.575
+2022-04-13 18:30 INFO Best_acc:0.8918
+2022-04-13 18:30 INFO [Epoch 29] Training accuracy: 0.9681. Loss: 0.285. LR 0.000001
+2022-04-13 18:30 INFO [Epoch 29] Validation accuracy:0.8898. Loss:0.574
+2022-04-13 18:30 INFO Best_acc:0.8918
+2022-04-13 18:30 INFO [Epoch 30] Training accuracy: 0.9659. Loss: 0.291. LR 0.000001
+2022-04-13 18:30 INFO [Epoch 30] Validation accuracy:0.8895. Loss:0.573
+2022-04-13 18:30 INFO Best_acc:0.8918
+2022-04-13 18:31 INFO [Epoch 31] Training accuracy: 0.9660. Loss: 0.293. LR 0.000001
+2022-04-13 18:31 INFO [Epoch 31] Validation accuracy:0.8905. Loss:0.571
+2022-04-13 18:31 INFO Best_acc:0.8918
+2022-04-13 18:31 INFO [Epoch 32] Training accuracy: 0.9650. Loss: 0.288. LR 0.000001
+2022-04-13 18:31 INFO [Epoch 32] Validation accuracy:0.8898. Loss:0.570
+2022-04-13 18:31 INFO Best_acc:0.8918
+2022-04-13 18:31 INFO [Epoch 33] Training accuracy: 0.9644. Loss: 0.296. LR 0.000000
+2022-04-13 18:31 INFO [Epoch 33] Validation accuracy:0.8908. Loss:0.573
+2022-04-13 18:31 INFO Best_acc:0.8918
+2022-04-13 18:32 INFO [Epoch 34] Training accuracy: 0.9663. Loss: 0.288. LR 0.000000
+2022-04-13 18:32 INFO [Epoch 34] Validation accuracy:0.8931. Loss:0.573
+2022-04-13 18:32 INFO Best_acc:0.8931
+2022-04-13 18:32 INFO [Epoch 35] Training accuracy: 0.9672. Loss: 0.288. LR 0.000000
+2022-04-13 18:32 INFO [Epoch 35] Validation accuracy:0.8905. Loss:0.573
+2022-04-13 18:32 INFO Best_acc:0.8931
+2022-04-13 18:32 INFO [Epoch 36] Training accuracy: 0.9650. Loss: 0.293. LR 0.000000
+2022-04-13 18:32 INFO [Epoch 36] Validation accuracy:0.8918. Loss:0.574
+2022-04-13 18:32 INFO Best_acc:0.8931
+2022-04-13 18:33 INFO [Epoch 37] Training accuracy: 0.9652. Loss: 0.291. LR 0.000000
+2022-04-13 18:33 INFO [Epoch 37] Validation accuracy:0.8915. Loss:0.572
+2022-04-13 18:33 INFO Best_acc:0.8931
+2022-04-13 18:33 INFO [Epoch 38] Training accuracy: 0.9662. Loss: 0.286. LR 0.000000
+2022-04-13 18:33 INFO [Epoch 38] Validation accuracy:0.8918. Loss:0.572
+2022-04-13 18:33 INFO Best_acc:0.8931
+2022-04-13 18:33 INFO [Epoch 39] Training accuracy: 0.9664. Loss: 0.287. LR 0.000000
+2022-04-13 18:33 INFO [Epoch 39] Validation accuracy:0.8889. Loss:0.570
+2022-04-13 18:33 INFO Best_acc:0.8931
+2022-04-13 18:34 INFO [Epoch 40] Training accuracy: 0.9659. Loss: 0.290. LR 0.000000
+2022-04-13 18:34 INFO [Epoch 40] Validation accuracy:0.8911. Loss:0.572
+2022-04-13 18:34 INFO Best_acc:0.8931

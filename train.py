@@ -28,7 +28,7 @@ def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('--exp_name', type=str, default='exp_1', help='Name of experiment.')
     parser.add_argument('--raf_path', type=str, default='../DAN/datasets/raf-basic/', help='Raf-DB dataset path.')
-    parser.add_argument('--batch_size', type=int, default=32, help='Batch size.')
+    parser.add_argument('--batch_size', type=int, default=64, help='Batch size.')
     parser.add_argument('--lr', type=float, default=1e-4, help='Initial learning rate for Adam.')
     parser.add_argument('--workers', default=4, type=int, help='Number of data loading workers.')
     parser.add_argument('--epochs', type=int, default=40, help='Total training epochs.')
