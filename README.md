@@ -7,9 +7,9 @@ Unofficial implementation of [Feature Decomposition and Reconstruction Learning 
 ```
 python train.py --exp_name {name_for_exp}
 ```
-I set the default parameters according to the paper, however I cannot reproduce the result. I use the following command to generate the best result (89.02 in overall accuracy):
+I set the default parameters according to the paper, however I cannot reproduce the result. I use the following command to generate the best result (89.31) in terms of overall accuracy):
 ```
-python train.py --lr 0.001 --lambda_2 0.001
+python train.py --lr 0.001 --lambda_2 0.001 --exp_name test
 ```
 ## Testing
 Use the following command:
