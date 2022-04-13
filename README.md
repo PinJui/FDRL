@@ -3,7 +3,7 @@ Unofficial implementation of [Feature Decomposition and Reconstruction Learning 
 
 ## Training
 1. First download the pretrained resnet18 and put it in backbone folder
-2. To train the model use the following command:
+2. To train the model according to the paper use the following command:
 ```
 python train.py --exp_name {name_for_exp}
 ```
