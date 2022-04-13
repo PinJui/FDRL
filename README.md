@@ -1,6 +1,5 @@
 # FDRL
-Unofficial implementation of "Feature Decomposition and Reconstruction Learning for Effective Facial Expression Recognition - CVPR'21"
-[paper](https://openaccess.thecvf.com/content/CVPR2021/papers/Ruan_Feature_Decomposition_and_Reconstruction_Learning_for_Effective_Facial_Expression_Recognition_CVPR_2021_paper.pdf)
+Unofficial implementation of [Feature Decomposition and Reconstruction Learning for Effective Facial Expression Recognition - CVPR'21](https://openaccess.thecvf.com/content/CVPR2021/papers/Ruan_Feature_Decomposition_and_Reconstruction_Learning_for_Effective_Facial_Expression_Recognition_CVPR_2021_paper.pdf)
 
 ## Training
 1. First download the pretrained resnet18 and put it in backbone folder
