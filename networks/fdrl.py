@@ -62,7 +62,7 @@ class InterRM(nn.Module):
         for i in range(self.M):
             setattr(self, "inter_fc%d" % i, nn.Sequential(nn.Linear(
                 self.D, self.D), nn.ReLU()))
-        self.dummy = 1 - torch.eye(self.M, self.M).cuda()
+        self.dummy = 1 - torch.eye(self.M, self.M)
         self.delta = 0.5
 
     def forward(self, x):
@@ -71,10 +71,11 @@ class InterRM(nn.Module):
             feature = getattr(self, "inter_fc%d" % i)(x[:, i, :])
             features.append(feature)
 
+        # contiguous to resolve cdist backward issue
         features = torch.stack(features).permute([1, 0, 2]).contiguous()
         dist_mat = torch.cdist(features, features)
         dist_mat = torch.tanh(dist_mat)
-        dist_mat = dist_mat * self.dummy
+        dist_mat = dist_mat * self.dummy.to(x.device)
         # dim => [batch, M, M] x [batch, M, D] = [batch, M, D]
         features_hat = torch.matmul(dist_mat, features)
 
@@ -126,6 +127,3 @@ class FDRL(nn.Module):
         frn_feat = torch.sum(frn_feat, dim=1)
         pred = self.epn(frn_feat)
         return fdn_feat, alphas, pred
-
-if __name__ == '__main__':
-    model = FDRL(9, 512, 128, 7)

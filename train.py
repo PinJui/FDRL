@@ -66,6 +66,7 @@ def run_training():
 
     model.to(device)
 
+    # Additional augmentation used
     data_transforms = transforms.Compose([
         transforms.Resize((224, 224)),
         transforms.RandomHorizontalFlip(),
@@ -98,6 +99,7 @@ def run_training():
     val_loader = torch.utils.data.DataLoader(val_dataset, batch_size=args.batch_size,
     num_workers=args.workers, shuffle=False, pin_memory=True)
 
+    # Define losses
     criterion_cls = torch.nn.CrossEntropyLoss()
     criterion_c = CompactnessLoss(args.num_branch, args.feat_dim)
     criterion_d = CenterLoss(args.num_class, args.num_branch)
