@@ -17,4 +17,15 @@ Use the following command:
 python eval.py --resume {path_to_trained_model_in_checkpoints}
 ```
 
+## Cite
+```
+@InProceedings{Ruan_2021_CVPR,
+    author    = {Ruan, Delian and Yan, Yan and Lai, Shenqi and Chai, Zhenhua and Shen, Chunhua and Wang, Hanzi},
+    title     = {Feature Decomposition and Reconstruction Learning for Effective Facial Expression Recognition},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2021},
+    pages     = {7660-7669}
+}
+```
 If you find this repo useful, please star, tks.
