@@ -15,8 +15,8 @@ def parse_args():
     parser.add_argument('--batch_size', type=int, default=32, help='Batch size.')
     parser.add_argument('--workers', default=4, type=int, help='Number of data loading workers.')
     parser.add_argument('--num_class', type=int, default=7, help='Number of class.')
-    parser.add_argument('--M', type=int, default=9, help='Number of branches.')
-    parser.add_argument('--D', type=int, default=128, help='Number of branches.')
+    parser.add_argument('--num_branch', type=int, default=9, help='Number of branches.')
+    parser.add_argument('--feat_dim', type=int, default=128, help='Number of branches.')
     parser.add_argument('--lambda_1', type=float, default=1e-4, help='Coefficient for compactness loss.')
     parser.add_argument('--lambda_2', type=float, default=1, help='Coefficient for balance loss.')
     parser.add_argument('--lambda_3', type=float, default=1e-4, help='Coefficient for distribution loss.')
@@ -26,7 +26,7 @@ def parse_args():
 args = parse_args()
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
-model = FDRL(args.M, 512, args.D, args.num_class)
+model = FDRL(args.num_branch, 512, args.feat_dim, args.num_class)
 ckpt = torch.load(args.resume, map_location=device)
 model.load_state_dict(ckpt['model_state_dict'], strict=True)
 model.to(device)
@@ -42,9 +42,9 @@ print('Validation set size:', val_dataset.__len__())
 val_loader = torch.utils.data.DataLoader(val_dataset, batch_size = args.batch_size, num_workers = args.workers, shuffle = False, pin_memory = True)
 
 criterion_cls = torch.nn.CrossEntropyLoss()
-criterion_c = CompactnessLoss(args.M, args.D)
-criterion_d = CenterLoss(args.num_class, args.M)
-criterion_b = BalanceLoss(args.M)
+criterion_c = CompactnessLoss(args.num_branch, args.feat_dim)
+criterion_d = CenterLoss(args.num_class, args.num_branch)
+criterion_b = BalanceLoss(args.num_branch)
 
 running_loss = 0.0
 iter_cnt = 0
