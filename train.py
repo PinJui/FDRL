@@ -7,6 +7,7 @@ import numpy as np
 import torch
 from torchvision import transforms
 from tqdm import tqdm
+from sklearn.metrics import balanced_accuracy_score
 
 from datasets import RafDataSet
 from losses import BalanceLoss, CenterLoss, CompactnessLoss
@@ -112,6 +113,7 @@ def run_training():
         optimizer.load_state_dict(ckpt['optimizer_state_dict'])
     scheduler = torch.optim.lr_scheduler.MultiStepLR(optimizer, milestones=[10, 18, 25, 32], gamma=0.1)
 
+    # training loop
     best_acc = 0
     for epoch in tqdm(range(1, args.epochs + 1)):
         running_loss = 0.0
@@ -119,7 +121,7 @@ def run_training():
         iter_cnt = 0
         model.train()
 
-        # training loop
+
         for (imgs, targets) in train_loader:
             iter_cnt += 1
             optimizer.zero_grad()
@@ -154,6 +156,8 @@ def run_training():
             iter_cnt = 0
             bingo_cnt = 0
             sample_cnt = 0
+            y_true = []
+            y_pred = []
 
             model.eval()
             for (imgs, targets) in val_loader:
@@ -169,6 +173,8 @@ def run_training():
                 running_loss += loss.item()
                 iter_cnt += 1
                 _, predicts = torch.max(pred, 1)
+                y_true.extend(targets.cpu().numpy().tolist())
+                y_pred.extend(predicts.cpu().numpy().tolist())
                 correct_num = torch.eq(predicts, targets)
                 bingo_cnt += correct_num.sum().cpu()
                 sample_cnt += pred.size(0)
@@ -178,16 +184,17 @@ def run_training():
 
             acc = bingo_cnt.float()/float(sample_cnt)
             acc = np.around(acc.numpy(), 4)
+            bacc = np.around(balanced_accuracy_score(y_true, y_pred), 4)
 
             best_acc = max(acc, best_acc)
-            logging.info("[Epoch %d] Validation accuracy:%.4f. Loss:%.3f" % (
-                epoch, acc, running_loss))
+            logging.info("[Epoch %d] Validation accuracy:%.4f. Balanced Accuracy:%.4f. Loss:%.3f" % (
+                epoch, acc, bacc, running_loss))
             logging.info("Best_acc:" + str(best_acc))
-            tqdm.write("[Epoch %d] Validation accuracy:%.4f. Loss:%.3f" % (
-                epoch, acc, running_loss))
-            tqdm.write("Best_acc:" + str(best_acc))
+            tqdm.write("[Epoch %d] Validation accuracy:%.4f. Balanced Accuracy:%.4f. Loss:%.3f" % (
+                epoch, acc, bacc, running_loss))
+            tqdm.write("Best_bacc:" + str(best_acc))
 
-            if acc == best_acc:
+            if bacc == best_acc:
                 torch.save({'iter': epoch,
                             'model_state_dict': model.state_dict(),
                             'optimizer_state_dict': optimizer.state_dict(), },

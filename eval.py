@@ -2,12 +2,13 @@ import argparse
 
 import numpy as np
 import torch
-from sklearn.metrics import confusion_matrix
+from sklearn.metrics import balanced_accuracy_score, confusion_matrix
 from torchvision import transforms
 
 from datasets import RafDataSet
 from losses import BalanceLoss, CenterLoss, CompactnessLoss
 from networks.fdrl import FDRL
+
 
 def parse_args():
     parser = argparse.ArgumentParser()
@@ -37,7 +38,7 @@ data_transforms_val = transforms.Compose([
         transforms.Normalize(mean=[0.485, 0.456, 0.406],
                                  std=[0.229, 0.224, 0.225])])   
 
-val_dataset = RafDataSet(args.raf_path, phase = 'test', transform = data_transforms_val)   
+val_dataset = RafDataSet(args.raf_path, phase = 'test', transform = data_transforms_val)
 print('Validation set size:', val_dataset.__len__())   
 val_loader = torch.utils.data.DataLoader(val_dataset, batch_size = args.batch_size, num_workers = args.workers, shuffle = False, pin_memory = True)
 
@@ -54,32 +55,35 @@ y_true = []
 y_pred = []
 
 model.eval()
-for (imgs, targets) in val_loader:
-    imgs = imgs.to(device)
-    targets = targets.to(device)
+with torch.no_grad():
+    for (imgs, targets) in val_loader:
+        imgs = imgs.to(device)
+        targets = targets.to(device)
 
-    fdn_feat, alphas, pred = model(imgs)
+        fdn_feat, alphas, pred = model(imgs)
 
-    loss = 1 * criterion_cls(pred, targets) \
-        + args.lambda_1 * criterion_c(fdn_feat) \
-        + args.lambda_2 * criterion_b(alphas) \
-        + args.lambda_3 * criterion_d(alphas, targets)
+        loss = 1 * criterion_cls(pred, targets) \
+            + args.lambda_1 * criterion_c(fdn_feat) \
+            + args.lambda_2 * criterion_b(alphas) \
+            + args.lambda_3 * criterion_d(alphas, targets)
 
-    running_loss += loss.item()
-    iter_cnt+=1
-    _, predicts = torch.max(pred, 1)
-    correct_num  = torch.eq(predicts,targets)
-    y_true.extend(list(targets.cpu().numpy()))
-    y_pred.extend(list(predicts.cpu().numpy()))
-    bingo_cnt += correct_num.sum().cpu()
-    sample_cnt += pred.size(0)
+        running_loss += loss.item()
+        iter_cnt+=1
+        _, predicts = torch.max(pred, 1)
+        correct_num  = torch.eq(predicts,targets)
+        y_true.extend(list(targets.cpu().numpy()))
+        y_pred.extend(list(predicts.cpu().numpy()))
+        bingo_cnt += correct_num.sum().cpu()
+        sample_cnt += pred.size(0)
 
 running_loss = running_loss/iter_cnt
 acc = bingo_cnt.float()/float(sample_cnt)
 acc = np.around(acc.numpy(),4)
+bacc = np.around(balanced_accuracy_score(y_true, y_pred), 4)
 conf_mat = confusion_matrix(y_true, y_pred)
 print('Testing loss:', running_loss)
 print('Confusion matrix:')
 print(conf_mat)
-print('Testing acc:', acc)
+print('Testing acc: ', acc)
+print('Testing balanced acc: ', bacc)
 print('Finish testing!')

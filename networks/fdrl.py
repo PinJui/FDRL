@@ -120,8 +120,9 @@ class FDRL(nn.Module):
         self.epn = nn.Linear(self.D, self.num_class)
 
     def forward(self, x):
+        b = x.size(0)
         basic_feat = self.backbone(x)
-        basic_feat = self.pooling(basic_feat).squeeze()
+        basic_feat = self.pooling(basic_feat).view(b, self.P)
         fdn_feat = self.fdn(basic_feat)
         frn_feat, alphas = self.frn(fdn_feat)
         frn_feat = torch.sum(frn_feat, dim=1)

@@ -16,6 +16,7 @@ Use the following command:
 ```
 python eval.py --resume {path_to_trained_model_in_checkpoints}
 ```
+Note that if you use other arguments at training, please make sure apply them at testing.
 
 ## Cite
 ```
