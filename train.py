@@ -187,10 +187,10 @@ def run_training():
             bacc = np.around(balanced_accuracy_score(y_true, y_pred), 4)
 
             best_acc = max(acc, best_acc)
-            logging.info("[Epoch %d] Validation accuracy:%.4f. Balanced Accuracy:%.4f. Loss:%.3f" % (
+            logging.info("[Epoch %d] Validation accuracy: %.4f. Balanced Accuracy: %.4f. Loss: %.3f" % (
                 epoch, acc, bacc, running_loss))
             logging.info("Best_acc:" + str(best_acc))
-            tqdm.write("[Epoch %d] Validation accuracy:%.4f. Balanced Accuracy:%.4f. Loss:%.3f" % (
+            tqdm.write("[Epoch %d] Validation accuracy: %.4f. Balanced Accuracy: %.4f. Loss: %.3f" % (
                 epoch, acc, bacc, running_loss))
             tqdm.write("Best_bacc:" + str(best_acc))
 
